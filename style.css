@@ -1,0 +1,850 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+nav {
+    background-color: #FFFFFF;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+section article, form article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+/* el flow of responsiveness byemshy ezay */
+/* leh lama ba3mel property in global w a7awel aghayarha localy msh beyerda */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    #logo {
+        width: 40%;
+        height: auto;
+        padding: 5%;
+    }
+
+    .menu-icon { /* menu icon */
+        width: 5%;
+        height: auto;
+        margin-right: 3%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer; /* this is something i learnt new */
+    }
+
+    .menu-icon.hide {
+        display: none;
+    }
+
+    /* disable scrolling on menubar */
+    .menu-items { /* menu items */
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #e8f2fd; /* practice more on it */
+        position: absolute; /* how is it absolute without defining that the parent is relative */
+        top: 0;
+        right: 0;
+        /* width: 30%; */
+        width: 40%;
+        height: 100vh;
+        position: fixed;
+    }
+
+    .menu-items.show {
+        /* practice more on it */
+        display: flex;
+    }
+
+    .menu-items li {
+        display: flex; /* this way helps you ensure the text is centered */
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .menu-item {
+        width: 50%;
+    }
+
+    /*add effects*/
+    .close-icon {
+        padding-right: 70%;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    #close-icon {
+        cursor: pointer;
+    }
+
+    /* not fixed yet */
+    .menu-item:hover {
+        background-color: #5d34ff;
+        border-radius: 200px;
+    }
+
+    .menu-item:hover a,
+    .menu-items li:nth-child(2):hover a {
+        color: white;
+    }
+
+    .menu-items li:nth-child(2) a {
+        color: #5E3BEE;
+    }
+
+    .menu-items li a {
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        color: #1C1E53;
+        font-size: 1rem;
+    }
+
+    #contact-button {
+        color: #5E3BEE;
+        background: none;
+    }
+
+    #contact-button input {
+        width: 100px;
+        height: 40px;
+        background: none;
+        border: 1px solid;
+        border-radius: 5.33px;
+        border-color: #5E3BEE;
+        color: #5E3BEE;
+    }
+
+    #contact-button input:hover {
+        background-color: #5d34ff;
+        color: aliceblue;
+    }
+
+    #contact-button input:active {
+        background-color: #5d34ff;
+        color: aliceblue;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-section {
+        background-color: #F5FCFF;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section img {
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    
+    article h4 {
+        color: #282938;
+        font-size: 1.333125rem;
+        line-height: 150%;
+    }
+
+    article h2 {
+        color: #282938;
+        font-weight: bold;
+        font-size: 2.666875rem;
+        line-height: 120%;
+        padding-top: 2%;
+    }
+
+    h2 span {
+        color: #5E3BEE;
+    }
+
+    article p {
+        color: #1C1E53;
+        font-size: 1rem;
+        font-weight: normal;
+        line-height: 150%;
+        width: 80%;
+        padding: 5% 0;
+    }
+
+    article input {
+        background-color: #5E3BEE;
+        color: white;
+        font-size: 1.2rem;
+        line-height: 150%;
+        width: 150px;
+        height: 50px;
+        border-radius: 5.33px;
+        border: 1px solid;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    article input:hover {
+        background-color: #6a46fb;
+
+    }
+
+    article input:active {
+        background-color: #6a46fb;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    }
+
+    .skills h2, .about h2 {
+        color: #282938;
+        font-weight: bold;
+        font-size: 2rem;
+        line-height: 120%;
+        padding-top: 5%;
+    }
+
+    .skill {
+        width: 80%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+        padding-bottom: 5%;
+        border-radius: 10.67px;
+        background-color: #F5FCFF;
+    }
+
+    .skill:first-child {
+        border-bottom: 4px solid #5E3BEE;
+    }
+
+    .skill img, .about img {
+        width: 90%;
+        height: auto;
+    }
+
+    .skill h1, .portfolio h1, .project h3, .feedbacks h1, .feedback h1, form h1 {
+        color: #282938;
+        font-weight: bold;
+        font-size: 2rem;
+        line-height: 140%;
+    }
+
+    .skill p, .about p, .project p, .feedback p, .info div label {
+        color: #1C1E53;
+        font-weight: normal;
+        font-size: 1rem;
+        line-height: 150%;
+        width: 100%;
+        padding: 5%;
+    }
+
+    .about p, .feedback p {
+        width: 80%;
+    }
+
+    #visit-button {
+        width: 100%;
+        border-radius: 10.67px;
+        background-color: #E62872;
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20%;
+        margin-bottom: 30%;
+        padding: 10%;
+    }
+
+    .portfolio a img {
+        width: 10%;
+        margin: 0 5% 0 0;
+    }
+
+    .project {
+        width: 80%;
+        margin-bottom: 20%;
+        border-radius: 8px 8px 0 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+    .project img {
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    .project a {
+        width: 31%;
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+        padding-bottom: 3%;
+        border-bottom: 1px solid #5E3BEE;
+    }
+
+    .project span {
+        width: max-content;
+        margin-right: 6%;
+    }
+
+    .feedbacks {
+        background-color: #F5FCFF;
+        margin-top: -10%;
+    }
+
+    .feedbacks h1 {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .feedback {
+        width: 80%;
+        border-radius: 8px;
+        border: 1px solid #006B6A;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    .feedback img:first-child {
+        width: 50%;
+        height: 50%;
+        margin-bottom: 10%;
+    }
+
+    .feedback img:last-child {
+        width: 50%;
+        padding-bottom: 10%;
+    }
+
+    form, .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info {
+        border-radius: 8px;
+        box-shadow: rgba(94, 59, 238, 0.18) 0px 2px 4px;
+        width: 60%;
+        margin-top: 5%;
+        padding: 10%;
+    }
+
+    .data {
+        width: 100%;
+        margin-bottom: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .info div label {
+        padding-left: 0;
+        color: #282938;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .data-input {
+        width: 100%;
+        height: 30px;
+        border-style: solid;
+        border-color: #5E3BEE;
+        border-radius: 8px;
+        padding-left: 2%;
+    }
+
+    .info select {
+        width: 100%;
+        height: 30px;
+        border-style: solid;
+        border-color: #5E3BEE;
+        border-radius: 8px;
+        padding-left: 2%;
+    }
+
+    .info textarea {
+        resize: none;
+        padding: 4%;
+        border-style: solid;
+        border-color: #5E3BEE;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .terms {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 30%;
+    }
+
+    #terms {
+        margin-right: 3%;
+    }
+
+    #submit-button {
+        width: 80px;
+        height: 40px; /* leh percent msh bteshtaghal hena */
+        border: none;
+        border-radius: 8px;
+        background-color: #5E3BEE;
+        color: white;
+    }
+
+    footer {
+        width: 100%;
+        height: 15vh;
+        background-color: #F5FCFF;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer > img {
+        width: 15%;
+    }
+
+    footer ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 47%;
+    }
+
+    footer ul li a {
+        font-family: 'Roboto', sans-serif;
+        color: #282938;
+        font-size: 0.7rem;
+        text-decoration: none;
+    }
+
+    footer div {
+        width: 20%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer div img {
+        width: 50%;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .close-icon {
+        margin-top: 60px;
+    }
+
+    .menu-items {
+        width: 50%;
+    }
+
+    .menu-items li {
+        margin-bottom: 85px;
+    }
+
+    .menu-items li a {
+        font-size: 1.2rem;
+    }
+
+    #contact-button input {
+        width: 120px;
+        height: 50px;
+    }
+
+    section img {
+        width: 80%;
+    }
+
+    article h4 {
+        font-size: 2rem;
+    }
+
+    article h2 {
+        font-size: 2.5rem;
+    }
+
+    article p {
+        font-size: 1.5rem;
+    }
+
+    article input {
+        font-size: 1.5rem;
+        width: 180px;
+        height: 60px;
+    }
+
+    .skills h2,
+    .about h2, .portfolio h1, .feedback h1 {
+        font-size: 2.5rem;
+    }
+
+    .skill {
+        width: 70%;
+    }
+
+    .skill img,
+    .about img {
+        width: 80%;
+    }
+
+    .skill h1,
+    .project h3,
+    form h1 {
+        font-size: 1.8rem;
+    }
+
+    .skill p,
+    .about p,
+    .project p,
+    .feedback p, form p,
+    .info div label {
+        font-size: 1.2rem;
+    }
+
+    .project {
+        width: 70%;
+    }
+
+    .project img {
+        width: 80%;
+    }
+
+    .feedback {
+        width: 70%;
+    }
+    
+    .info, .data, .terms {
+        width: 70%;
+    }
+
+
+    #submit-button {
+        width: 90px;
+        height: 50px;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+    nav {
+        justify-content: space-around;
+    }
+
+    #logo {
+        width: 30%;
+        height: auto;
+    }
+    
+    .menu-icon {
+        display: none;
+    }
+    
+    .menu-items {
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: white;
+        position: static;
+    }
+    
+    .menu-items li {
+        width: fit-content;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .close-icon, #close-icon {
+        display: none;
+    }
+    
+    .menu-item:hover {
+        background-color: #5d34ff;
+        border-radius: 200px;
+    }
+    
+    .menu-item:hover a,
+    .menu-items li:nth-child(2):hover a {
+        color: white;
+    }
+    
+    .menu-items li a {
+        font-size: 1rem;
+    }
+    
+    .hero-section {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .hero-section {
+        padding: 5%;
+    }
+
+    .hero-section > img {
+        order: 2;
+    }
+
+    section img {
+        width: 50%;
+        margin: 0;
+    }
+
+    .hero-section article {
+        width: 50%;
+        align-items: flex-start;
+        text-align: start;
+        padding: 5% 3% 0;
+    }
+
+    article h4 {
+        font-size: 1rem;
+        line-height: 300%;
+    }
+
+    article h2 {
+        font-size: 2rem;
+    
+    }
+
+    article p {
+        font-size: 1rem;
+        
+    }
+
+    article input {
+        font-size: 1rem;
+        width: 150px;
+        height: 60px;
+    }
+
+    .skills {
+        padding: 3%;
+    }
+
+    .skills section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .skills h2,
+    .about h2,
+    .feedback h1 {
+        font-size: 2rem;
+    }
+
+    .skill {
+        width: 40%;
+    }
+    
+    .skill img,
+    .about img {
+        width: 50%;
+        margin-bottom: 10%;
+    }
+
+    .skill h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10%;
+    }
+    
+    .feedback p {
+        font-size: 1rem;
+        padding: 0;
+        padding-top: 5%;
+    }
+
+    .skill p {
+        font-size: 1rem;
+        padding: 8%;
+    }
+
+    .about {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 10%;
+
+    }
+
+    .about img {
+        width: 40%;
+    }
+
+    .about article {
+        align-items: flex-start;
+        text-align: start;
+        width: 50%;
+        padding: 0 0 0 10%;
+    }
+
+    .about p {
+        font-size: 1rem;
+        padding: 0;
+        padding-top: 5%;
+        width: 100%;
+    }
+
+    .portfolio {
+        margin-bottom: 0%;
+    }
+
+    .portfolio > article {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 5% 10%;
+    }
+
+    .portfolio h1 {
+        font-size: 2rem;
+        width: fit-content;
+    }
+
+    #visit-button {
+        width: fit-content;
+        margin: 0;
+        padding: 2%;
+    }
+
+    .portfolio > section {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 3%;
+    }
+
+    .project {
+        width: 30%;
+    }
+
+    .project h3 {
+        font-size: 1.3rem;
+    }
+
+    .project p {
+        font-size: 1rem;
+        padding-top: 10%;
+        width: fit-content;
+    }
+
+    .project a {
+        width: 60%;
+        margin-top: 10%;
+    }
+
+    .feedbacks {
+        padding-top: 5%;
+    }
+
+    .feedbacks > section {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 3%;
+    }
+
+    .feedback {
+        width: 30%;
+        padding-top: 3%;
+        margin-bottom: 0;
+    }
+
+    .feedback p {
+        margin-bottom: 5%;
+    }
+
+    form h1 {
+        font-size: 2rem;
+        line-height: 140%;
+    }
+
+    form p {
+        width: 100%;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+    }
+
+    .data {
+        width: 40%;
+        margin-bottom: 10%;
+    }
+
+    .info div label {
+        margin-bottom: 0%;
+    }
+    
+    .topics, .message {
+        width: 90%;
+    }
+    
+    .terms {
+        width: 90%;
+        margin-bottom: 20%;
+    }
+    
+    #submit-button {
+        width: 100px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    footer ul {
+        width: 40%;
+    }
+
+    footer ul li a {
+        font-size: 0.8rem;
+    }
+
+    footer div {
+        width: 15%;
+    }
+
+}
